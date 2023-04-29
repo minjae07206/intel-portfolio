@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { Link, Element } from 'react-scroll';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container, Navbar} from 'react-bootstrap';
 import {About} from '../src/components/About.js';
@@ -8,30 +9,42 @@ import {Hobbies} from './components/Hobbies';
 import {Contact} from './components/Contact';
 
 function App() {
+  const styles = {
+    position: 'sticky',
+    top: '0px',
+    zIndex: 5
+  };
   return (
     <div className="App">
-      <Navbar bg="light">
+      <Navbar bg="light" style={styles} >
         <Container>
           <Navbar.Brand>Home</Navbar.Brand>
         </Container>
         <Container>
-          <Navbar.Brand>About</Navbar.Brand>
+          <Link to='about' smooth={true}><Navbar.Brand>About</Navbar.Brand></Link>
         </Container>
         <Container>
-          <Navbar.Brand>Experience</Navbar.Brand>
+        <Link to='experience' smooth={true}><Navbar.Brand>Experience</Navbar.Brand></Link>
         </Container>
         <Container>
-          <Navbar.Brand>Hobbies</Navbar.Brand>
+        <Link to='hobbies' smooth={true}><Navbar.Brand>Hobbies</Navbar.Brand></Link>
         </Container>
         <Container>
-          <Navbar.Brand>Contact</Navbar.Brand>
+        <Link to='contact' smooth={true}><Navbar.Brand>Contact</Navbar.Brand></Link>
+        </Container>
+        <Container>
+          <Navbar.Brand>Login</Navbar.Brand>
         </Container>
       </Navbar>
-      <About></About>
-      <Experience></Experience>
-      <Hobbies></Hobbies>
-      <Contact></Contact>
+        <div>
+        <Element name='about'><About></About></Element>
+        <Element name="experience"><Experience></Experience></Element>
+        <Element name='hobbies'><Hobbies></Hobbies></Element>
+        <Element name='contact'><Contact></Contact></Element>
+        </div>
+      
     </div>
+    
   );
 }
 

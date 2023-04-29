@@ -1,19 +1,31 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit'
 
-let newExperience = createSlice({
-    name: 'newExperience',
-    initialState: {},
+let experiences = createSlice({
+    name: 'experiences',
+    initialState: [],
     reducers: {
-        sendDataToServer(state, e){
-            e.payload.preventDefault();
-            console.log(e.payload)
+        addExperience (state, action) {
+            return action.payload;
+        },
+    }
+})
 
-        }
+let hobbies = createSlice({
+    name: 'hobbies',
+    initialState: [],
+    reducers: {
+        addHobby (state, action) {
+            return action.payload;
+        },
     }
 })
 
 export default configureStore({
-  reducer: {newExperience: newExperience}
+  reducer: {
+    experiences: experiences.reducer,
+    hobbies: hobbies.reducer,
+}
 }) 
 
-export let { sendDataToServer } = newExperience.actions
+export let { addExperience } = experiences.actions
+export let {addHobby} = hobbies.actions;
