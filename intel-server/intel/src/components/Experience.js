@@ -48,7 +48,6 @@ function Experience() {
                 })
             }
         </Card>
-        <JobsChart></JobsChart>
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+ /* import React, { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 import { useSelector } from "react-redux";
 
@@ -50,4 +50,4 @@ const JobsChart = () => {
   );
 };
 
-export { JobsChart };
+export { JobsChart }; */

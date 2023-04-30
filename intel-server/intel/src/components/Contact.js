@@ -1,4 +1,5 @@
 import {Card} from 'react-bootstrap';
+// component that shows the contact.
 function Contact () {
     return (
         <Card>

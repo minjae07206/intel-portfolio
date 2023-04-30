@@ -7,7 +7,7 @@ import {About} from '../src/components/About.js';
 import { Experience } from './components/Experience';
 import {Hobbies} from './components/Hobbies';
 import {Contact} from './components/Contact';
-
+// main page for jobs
 function App() {
   const styles = {
     position: 'sticky',
