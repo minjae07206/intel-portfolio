@@ -42,7 +42,6 @@ function App() {
         <Element name='hobbies'><Hobbies></Hobbies></Element>
         <Element name='contact'><Contact></Contact></Element>
         </div>
-      
     </div>
     
   );

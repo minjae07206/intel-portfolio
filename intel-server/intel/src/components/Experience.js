@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { addExperience } from '../store.js';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import {JobsChart} from './JobsChart.js';
 
 function Experience() {
     let dispatch = useDispatch();
@@ -14,6 +15,7 @@ function Experience() {
     }, [])
 
     return (
+        <div>
         <Card>
             <Card.Body>
                 <h1>Experience</h1>
@@ -27,6 +29,10 @@ function Experience() {
                     <label>Job Description</label><br></br>
                     <textarea resize="none" style={{ width: '500px'}} name='jobDescription'></textarea>
                 </div>
+                <div className='form-group'>
+                    <label>Time period in months</label>
+                    <input type='text' className='form-control' name='timeInMonths'></input>
+                </div>
                 <button type='submit' className='btn btn-danger'>Add</button>
             </form>
 
@@ -36,11 +42,14 @@ function Experience() {
                         <div>
                             <h4>{job.jobTitle}</h4>
                             <p>{job.jobDescription}</p>
+                            <p>Time in months: {job.timeInMonths}</p>
                         </div>
                     )
                 })
             }
         </Card>
+        <JobsChart></JobsChart>
+        </div>
     )
 }
 

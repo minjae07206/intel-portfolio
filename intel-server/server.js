@@ -35,7 +35,7 @@ app.get('/', function (req, res) {
 })
 
 app.post('/addjob', function (req, res) {
-    db.collection('Experience').insertOne({ jobTitle: req.body.jobTitle, jobDescription: req.body.jobDescription }, function () {
+    db.collection('Experience').insertOne({ jobTitle: req.body.jobTitle, jobDescription: req.body.jobDescription, timeInMonths: req.body.timeInMonths }, function () {
         console.log('저장완료');
     })
     res.redirect('http://localhost:3000/');
